@@ -1,0 +1,29 @@
+name: "sam3_language_encoder"
+platform: "onnxruntime_onnx"
+max_batch_size: 0
+
+input [
+  {
+    name: "tokens"
+    data_type: TYPE_INT64
+    dims: [ 1, 32 ]
+  }
+]
+
+output [
+  {
+    name: "text_attention_mask"
+    data_type: TYPE_BOOL
+    dims: [ 1, 32 ]
+  },
+  {
+    name: "text_memory"
+    data_type: TYPE_FP32
+    dims: [ 32, 1, 256 ]
+  },
+  {
+    name: "text_embeds"
+    data_type: TYPE_FP32
+    dims: [ 32, 1, 1024 ]
+  }
+]

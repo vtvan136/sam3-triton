@@ -1,0 +1,44 @@
+name: "sam3_image_encoder"
+platform: "onnxruntime_onnx"
+max_batch_size: 0
+
+input [
+  {
+    name: "image"
+    data_type: TYPE_UINT8
+    dims: [ 3, 1008, 1008 ]
+  }
+]
+
+output [
+  {
+    name: "vision_pos_enc_0"
+    data_type: TYPE_FP32
+    dims: [ 1, 256, 288, 288 ]
+  },
+  {
+    name: "vision_pos_enc_1"
+    data_type: TYPE_FP32
+    dims: [ 1, 256, 144, 144 ]
+  },
+  {
+    name: "vision_pos_enc_2"
+    data_type: TYPE_FP32
+    dims: [ 1, 256, 72, 72 ]
+  },
+  {
+    name: "backbone_fpn_0"
+    data_type: TYPE_FP32
+    dims: [ 1, 256, 288, 288 ]
+  },
+  {
+    name: "backbone_fpn_1"
+    data_type: TYPE_FP32
+    dims: [ 1, 256, 144, 144 ]
+  },
+  {
+    name: "backbone_fpn_2"
+    data_type: TYPE_FP32
+    dims: [ 1, 256, 72, 72 ]
+  }
+]
